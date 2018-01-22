@@ -1,0 +1,32 @@
+form {
+margin-bottom: 50px ;
+}
+.action {
+    margin: auto 0;
+}
+ol#raffle {
+  list-style-type: none ;
+  /*float: left ;*/
+  font-size: 15px ;
+  margin: 0px 0px 0px 0px ;
+  padding: 0px 0px 0px 0px ;
+}
+
+ol#raffle li {
+  background-color: #FAFAFA ;
+  border: 2px solid #454545 ;
+  float: left ;
+  height: 60px ;
+  line-height: 60px ;
+  margin: 0px 10px 10px 0px ;
+  overflow: hidden ;
+  padding: 0px 10px 0px 10px ;
+  text-align: center ;
+  width: auto ;
+}
+
+ol#raffle li.on {
+  background-color: gold ;
+  font-size: 35px ;
+  font-weight: bold ;
+}

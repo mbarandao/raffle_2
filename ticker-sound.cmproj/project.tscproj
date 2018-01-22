@@ -1,0 +1,631 @@
+{
+  "title" : "",
+  "description" : "",
+  "author" : "",
+  "width" : 1920.0,
+  "height" : 1080.0,
+  "version" : "0.5",
+  "editRate" : 30,
+  "authoringClientName" :  {
+    "name" : "Camtasia",
+    "platform" : "Mac",
+    "version" : "3.1.1"
+  },
+  "sourceBin" : [
+    {
+      "id" : 1,
+      "src" : "./media/1516441929.268543/19404119_slot-sound-effects-pack_by_bant_preview.mp3",
+      "rect" : [0, 0, 0, 0],
+      "lastMod" : "20180120T093355",
+      "sourceTracks" : [
+        {
+          "range" : [0, 1101312],
+          "type" : 2,
+          "editRate" : 44100,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 44100,
+          "bitDepth" : 0,
+          "numChannels" : 2,
+          "metaData" : ""
+        }
+      ]
+    },
+    {
+      "id" : 2,
+      "src" : "./media/1516628271.797090/Popular Epic Win Sound Effects  2017.mp3",
+      "rect" : [0, 0, 0, 0],
+      "lastMod" : "20180122T132910",
+      "sourceTracks" : [
+        {
+          "range" : [0, 5084928],
+          "type" : 2,
+          "editRate" : 44100,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 44100,
+          "bitDepth" : 0,
+          "numChannels" : 2,
+          "metaData" : ""
+        }
+      ]
+    }
+  ],
+  "timeline" : {
+    "id" : 3,
+    "sceneTrack" : {
+      "scenes" : [
+        {
+          "duration" : 56.5,
+          "title" : "",
+          "type" : "",
+          "csml" : {
+            "tracks" : [
+              {
+                "trackIndex" : 0,
+                "medias" : [
+                  {
+                    "id" : 4,
+                    "_type" : "Group",
+                    "parameters" : {
+                      "volume" : 1.0
+                    },
+                    "tracks" : [
+                      {
+                        "trackIndex" : 0,
+                        "medias" : [
+                          {
+                            "id" : 5,
+                            "_type" : "Group",
+                            "parameters" : {
+                              "volume" : 1.0
+                            },
+                            "tracks" : [
+                              {
+                                "trackIndex" : 0,
+                                "medias" : [
+                                  {
+                                    "id" : 6,
+                                    "_type" : "AMFile",
+                                    "src" : 1,
+                                    "trackNumber" : 0,
+                                    "attributes" : {
+                                      "ident" : "19404119_slot-sound-effects-pack_by_bant_preview",
+                                      "sampleRate" : 44100,
+                                      "bitDepth" : 0,
+                                      "gain" : 1.0,
+                                      "mixToMono" : false
+                                    },
+                                      "channelNumber" : "0,1",
+                                    "effects" : [
+
+                                    ],
+                                    "start" : 98,
+                                    "duration" : 95,
+                                    "mediaStart" : 254,
+                                    "mediaDuration" : 95,
+                                    "scalar" : 1,
+                                    "metadata" : {
+                                      "clipSpeedAttribute" : false,
+                                      "effectApplied" : "none"
+                                    },
+                                    "animationTracks" : {
+
+                                    }
+                                  }
+                                ],
+                                  "ident" : "",
+                                  "audioMuted" : false,
+                                  "videoHidden" : false
+                              },
+                              {
+                                "trackIndex" : 1,
+                                "medias" : [
+                                  {
+                                    "id" : 7,
+                                    "_type" : "AMFile",
+                                    "src" : 1,
+                                    "trackNumber" : 0,
+                                    "attributes" : {
+                                      "ident" : "19404119_slot-sound-effects-pack_by_bant_preview",
+                                      "sampleRate" : 44100,
+                                      "bitDepth" : 0,
+                                      "gain" : 1.0,
+                                      "mixToMono" : false
+                                    },
+                                      "channelNumber" : "0,1",
+                                    "effects" : [
+
+                                    ],
+                                    "start" : 0,
+                                    "duration" : 99,
+                                    "mediaStart" : 250,
+                                    "mediaDuration" : 99,
+                                    "scalar" : 1,
+                                    "metadata" : {
+                                      "clipSpeedAttribute" : false,
+                                      "effectApplied" : "none"
+                                    },
+                                    "animationTracks" : {
+
+                                    }
+                                  }
+                                ],
+                                  "ident" : "",
+                                  "audioMuted" : false,
+                                  "videoHidden" : false
+                              }
+                            ],
+                            "attributes" : {
+                              "ident" : "Group 1",
+                              "gain" : 1.0,
+                              "mixToMono" : false
+                            },
+                            "effects" : [
+
+                            ],
+                            "start" : 0,
+                            "duration" : 193,
+                            "mediaStart" : 0.0,
+                            "mediaDuration" : 193.0,
+                            "scalar" : 1,
+                            "metadata" : {
+                              "clipSpeedAttribute" : false,
+                              "effectApplied" : "none",
+                              "isOpen" : false
+                            },
+                            "animationTracks" : {
+
+                            }
+                          },
+                          {
+                            "id" : 8,
+                            "_type" : "Group",
+                            "parameters" : {
+                              "volume" : 1.0
+                            },
+                            "tracks" : [
+                              {
+                                "trackIndex" : 0,
+                                "medias" : [
+                                  {
+                                    "id" : 9,
+                                    "_type" : "AMFile",
+                                    "src" : 1,
+                                    "trackNumber" : 0,
+                                    "attributes" : {
+                                      "ident" : "19404119_slot-sound-effects-pack_by_bant_preview",
+                                      "sampleRate" : 44100,
+                                      "bitDepth" : 0,
+                                      "gain" : 1.0,
+                                      "mixToMono" : false
+                                    },
+                                      "channelNumber" : "0,1",
+                                    "effects" : [
+
+                                    ],
+                                    "start" : 98,
+                                    "duration" : 20,
+                                    "mediaStart" : 254,
+                                    "mediaDuration" : 20,
+                                    "scalar" : 1,
+                                    "metadata" : {
+                                      "clipSpeedAttribute" : false,
+                                      "effectApplied" : "none"
+                                    },
+                                    "animationTracks" : {
+
+                                    }
+                                  }
+                                ],
+                                  "ident" : "",
+                                  "audioMuted" : false,
+                                  "videoHidden" : false
+                              },
+                              {
+                                "trackIndex" : 1,
+                                "medias" : [
+                                  {
+                                    "id" : 10,
+                                    "_type" : "AMFile",
+                                    "src" : 1,
+                                    "trackNumber" : 0,
+                                    "attributes" : {
+                                      "ident" : "19404119_slot-sound-effects-pack_by_bant_preview",
+                                      "sampleRate" : 44100,
+                                      "bitDepth" : 0,
+                                      "gain" : 1.0,
+                                      "mixToMono" : false
+                                    },
+                                      "channelNumber" : "0,1",
+                                    "effects" : [
+
+                                    ],
+                                    "start" : 0,
+                                    "duration" : 99,
+                                    "mediaStart" : 250,
+                                    "mediaDuration" : 99,
+                                    "scalar" : 1,
+                                    "metadata" : {
+                                      "clipSpeedAttribute" : false,
+                                      "effectApplied" : "none"
+                                    },
+                                    "animationTracks" : {
+
+                                    }
+                                  }
+                                ],
+                                  "ident" : "",
+                                  "audioMuted" : false,
+                                  "videoHidden" : false
+                              }
+                            ],
+                            "attributes" : {
+                              "ident" : "Group 1",
+                              "gain" : 1.0,
+                              "mixToMono" : false
+                            },
+                            "effects" : [
+
+                            ],
+                            "start" : 381,
+                            "duration" : 113,
+                            "mediaStart" : 5.0,
+                            "mediaDuration" : 113.0,
+                            "scalar" : 1,
+                            "metadata" : {
+                              "clipSpeedAttribute" : false,
+                              "effectApplied" : "none",
+                              "isOpen" : false
+                            },
+                            "animationTracks" : {
+
+                            }
+                          }
+                        ],
+                          "ident" : "",
+                          "audioMuted" : false,
+                          "videoHidden" : false
+                      },
+                      {
+                        "trackIndex" : 1,
+                        "medias" : [
+                          {
+                            "id" : 11,
+                            "_type" : "Group",
+                            "parameters" : {
+                              "volume" : 1.0
+                            },
+                            "tracks" : [
+                              {
+                                "trackIndex" : 0,
+                                "medias" : [
+                                  {
+                                    "id" : 12,
+                                    "_type" : "AMFile",
+                                    "src" : 1,
+                                    "trackNumber" : 0,
+                                    "attributes" : {
+                                      "ident" : "19404119_slot-sound-effects-pack_by_bant_preview",
+                                      "sampleRate" : 44100,
+                                      "bitDepth" : 0,
+                                      "gain" : 1.0,
+                                      "mixToMono" : false
+                                    },
+                                      "channelNumber" : "0,1",
+                                    "effects" : [
+
+                                    ],
+                                    "start" : 98,
+                                    "duration" : 95,
+                                    "mediaStart" : 254,
+                                    "mediaDuration" : 95,
+                                    "scalar" : 1,
+                                    "metadata" : {
+                                      "clipSpeedAttribute" : false,
+                                      "effectApplied" : "none"
+                                    },
+                                    "animationTracks" : {
+
+                                    }
+                                  }
+                                ],
+                                  "ident" : "",
+                                  "audioMuted" : false,
+                                  "videoHidden" : false
+                              },
+                              {
+                                "trackIndex" : 1,
+                                "medias" : [
+                                  {
+                                    "id" : 13,
+                                    "_type" : "AMFile",
+                                    "src" : 1,
+                                    "trackNumber" : 0,
+                                    "attributes" : {
+                                      "ident" : "19404119_slot-sound-effects-pack_by_bant_preview",
+                                      "sampleRate" : 44100,
+                                      "bitDepth" : 0,
+                                      "gain" : 1.0,
+                                      "mixToMono" : false
+                                    },
+                                      "channelNumber" : "0,1",
+                                    "effects" : [
+
+                                    ],
+                                    "start" : 0,
+                                    "duration" : 99,
+                                    "mediaStart" : 250,
+                                    "mediaDuration" : 99,
+                                    "scalar" : 1,
+                                    "metadata" : {
+                                      "clipSpeedAttribute" : false,
+                                      "effectApplied" : "none"
+                                    },
+                                    "animationTracks" : {
+
+                                    }
+                                  }
+                                ],
+                                  "ident" : "",
+                                  "audioMuted" : false,
+                                  "videoHidden" : false
+                              }
+                            ],
+                            "attributes" : {
+                              "ident" : "Group 1",
+                              "gain" : 1.0,
+                              "mixToMono" : false
+                            },
+                            "effects" : [
+
+                            ],
+                            "start" : 193,
+                            "duration" : 188,
+                            "mediaStart" : 5.0,
+                            "mediaDuration" : 188.0,
+                            "scalar" : 1,
+                            "metadata" : {
+                              "clipSpeedAttribute" : false,
+                              "effectApplied" : "none",
+                              "isOpen" : false
+                            },
+                            "animationTracks" : {
+
+                            }
+                          }
+                        ],
+                          "ident" : "",
+                          "audioMuted" : false,
+                          "videoHidden" : false
+                      }
+                    ],
+                    "attributes" : {
+                      "ident" : "Group 1",
+                      "gain" : 1.0,
+                      "mixToMono" : false
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 0,
+                    "duration" : 494,
+                    "mediaStart" : 0.0,
+                    "mediaDuration" : 494.0,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "effectApplied" : "none",
+                      "isOpen" : false
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 1,
+                "medias" : [
+                  {
+                    "id" : 14,
+                    "_type" : "AMFile",
+                    "src" : 2,
+                    "trackNumber" : 0,
+                    "attributes" : {
+                      "ident" : "Popular Epic Win Sound Effects  2017",
+                      "sampleRate" : 44100,
+                      "bitDepth" : 0,
+                      "gain" : 1.0,
+                      "mixToMono" : false
+                    },
+                      "channelNumber" : "0,1",
+                    "effects" : [
+
+                    ],
+                    "start" : 0,
+                    "duration" : 1695,
+                    "mediaStart" : 1314,
+                    "mediaDuration" : 1695,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "effectApplied" : "none"
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 2,
+                "medias" : [
+                  {
+                    "id" : 15,
+                    "_type" : "AMFile",
+                    "src" : 2,
+                    "trackNumber" : 0,
+                    "attributes" : {
+                      "ident" : "Popular Epic Win Sound Effects  2017",
+                      "sampleRate" : 44100,
+                      "bitDepth" : 0,
+                      "gain" : 1.0,
+                      "mixToMono" : false
+                    },
+                      "channelNumber" : "0,1",
+                    "effects" : [
+
+                    ],
+                    "start" : 0,
+                    "duration" : 1125,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1125,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "effectApplied" : "none"
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 3,
+                "medias" : [
+                  {
+                    "id" : 16,
+                    "_type" : "AMFile",
+                    "src" : 2,
+                    "trackNumber" : 0,
+                    "attributes" : {
+                      "ident" : "Popular Epic Win Sound Effects  2017",
+                      "sampleRate" : 44100,
+                      "bitDepth" : 0,
+                      "gain" : 1.0,
+                      "mixToMono" : false
+                    },
+                      "channelNumber" : "0,1",
+                    "effects" : [
+
+                    ],
+                    "start" : 0,
+                    "duration" : 450,
+                    "mediaStart" : 3009,
+                    "mediaDuration" : 450,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "effectApplied" : "none"
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 4,
+                "medias" : [
+                  {
+                    "id" : 17,
+                    "_type" : "AMFile",
+                    "src" : 2,
+                    "trackNumber" : 0,
+                    "attributes" : {
+                      "ident" : "Popular Epic Win Sound Effects  2017",
+                      "sampleRate" : 44100,
+                      "bitDepth" : 0,
+                      "gain" : 1.0,
+                      "mixToMono" : false
+                    },
+                      "channelNumber" : "0,1",
+                    "effects" : [
+
+                    ],
+                    "start" : 24,
+                    "duration" : 189,
+                    "mediaStart" : 1125,
+                    "mediaDuration" : 189,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "effectApplied" : "none"
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "trackAttributes" : [
+      {
+        "ident" : "",
+        "audioMuted" : true,
+        "videoHidden" : true,
+        "metadata" : {
+          "IsLocked" : "True",
+          "trackHeight" : "48"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : true,
+        "videoHidden" : true,
+        "metadata" : {
+          "IsLocked" : "False",
+          "trackHeight" : "48"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : true,
+        "videoHidden" : true,
+        "metadata" : {
+          "IsLocked" : "False",
+          "trackHeight" : "48"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "trackHeight" : "48"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "trackHeight" : "48"
+        }
+      }
+    ],
+    "captionAttributes" : {
+      "enabled" : true,
+      "fontName" : "Arial",
+      "fontSize" : 32,
+      "backgroundColor" : [ 0, 0, 0, 204],
+      "foregroundColor" : [ 255, 255, 255, 255],
+      "lang" : "en",
+      "alignment" : 0,
+      "defaultFontSize" : true,
+      "opacity" : 0.5,
+      "backgroundEnabled" : true,
+      "backgroundOnlyAroundText" : true
+    },
+    "backgroundColor" : [ 0, 0, 0, 255]
+  },
+  "metadata" : {
+    "firstMedia" : true
+  }
+}
