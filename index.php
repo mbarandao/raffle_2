@@ -112,11 +112,13 @@ $scriptVersion = $detect->getScriptVersion();
     </div>
     <div class="sound">
       <audio id="epicSound">
-        <source src="sounds/ticker-sound.wav" type="audio/wav">
+        <source src="sounds/ticker-sound.ogg" type="audio/ogg">
+        <source src="sounds/ticker-sound.mp3" type="audio/mp3">
       </audio>
 
       <audio id="winnerSound">
-        <source src="sounds/andTheWinnerIs.wav" type="audio/wav">
+        <source src="sounds/andTheWinnerIs.ogg" type="audio/ogg">
+        <source src="sounds/andTheWinnerIs.mp3" type="audio/mp3">
       </audio>
     </div>
 
