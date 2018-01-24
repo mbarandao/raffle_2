@@ -5,6 +5,67 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+#players {
+  margin-top: 0px;
+}
+#players ul {
+  list-style-type: none;
+  margin-left: 0px;
+  padding: 0;
+
+}
+
+#players ul li {
+  margin: 0;
+  display: inline-block;
+  border: 3px solid white;
+  padding: 15px;
+  background: #f0f0f0;
+}
+
+#players ul li.selected {
+  border: 3px solid black;
+
+  background: yellow;
+}
+
+ol#raffle {
+  list-style-type: none ;
+  /*float: left ;*/
+  font-size: 15px ;
+  margin: 0px 0px 0px 0px ;
+  padding: 20px 60px 20px 40px ;
+}
+
+ol#raffle li {
+  background-color: #FAFAFA ;
+  border: 3px solid #fff ;
+  float: left ;
+  height: 60px ;
+  line-height: 60px ;
+  margin: 0px 10px 10px 0px ;
+  overflow: hidden ;
+  padding: 0px 10px 0px 10px ;
+  text-align: center ;
+  width: auto ;
+}
+
+ol#raffle li.on {
+  background-color: gold ;
+
+}
+
+ol#raffle li.winner {
+  display: inline-block;
+  border: 3px solid black ;
+  font-size: 35px ;
+  font-weight: bold ;
+  font-family: Verdana;
+  line-height: 135%;
+  height:70px;
+  padding-right: 20px
+  width: auto;
+}
 
 .container {
   width:100%;
@@ -111,7 +172,7 @@ form {
 
 .extra {
   font-size:12px;
-  margin-top:-40px;
+  margin-left: 40px;
 }
 
 #result1 {
@@ -125,44 +186,6 @@ form {
 
 .title {
   color: #fff;
-}
-
-ol#raffle {
-  list-style-type: none ;
-  /*float: left ;*/
-  font-size: 15px ;
-  margin: 0px 0px 0px 0px ;
-  padding: 20px 60px 20px 40px ;
-}
-
-ol#raffle li {
-  background-color: #FAFAFA ;
-  border: 3px solid #fff ;
-  float: left ;
-  height: 60px ;
-  line-height: 60px ;
-  margin: 0px 10px 10px 0px ;
-  overflow: hidden ;
-  padding: 0px 10px 0px 10px ;
-  text-align: center ;
-  width: auto ;
-}
-
-ol#raffle li.on {
-  background-color: gold ;
-
-}
-
-ol#raffle li.winner {
-  display: inline-block;
-  border: 3px solid black ;
-  font-size: 35px ;
-  font-weight: bold ;
-  font-family: Verdana;
-  line-height: 135%;
-  height:70px;
-  padding-right: 20px
-  width: auto;
 }
 
 .action {

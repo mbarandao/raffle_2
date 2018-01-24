@@ -123,14 +123,7 @@
       }
 
       function playerNames(){
-        // var namesExisting = $("#namesbox").val();
-        // if(namesExisting ="")
-        // {
           var names = new Array("Linda","Charlene","William","Parker", "Kinley","Geovanni","Selena", "Arnd","Callie");
-
-        // }else{
-        //   var names = namesExisting;
-        // }
         return names;
       }
 
@@ -159,24 +152,7 @@
           }
         }
         $("#namesbox").val(shuffle(namesbreak));
-        // console.log(shuffle(namesbreak));
-        // console.log(namesbreak);
-
-
-
       }
-
-      // function playSounClip() {
-      //   var audioElement = document.createElement('audio');
-      //   audioElement.setAttribute('src', 'http://tabletennispro.net/raffle/sounds/ticker-sound.wav');
-      //
-      //   if($('ol[class="stop"]')){
-      //      audioElement.play();
-      //   }
-      //   else {
-      //     audioElement.pause();
-      //   }
-      // }
 
       function cleanNames(para){
         para = para.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
@@ -225,7 +201,6 @@
         $('#namesbox').attr('disabled','disabled');
       }
 
-
       function go(){
         $('body').css({"overflow-y": "hidden"});
         $('#go').attr('disabled','disabled');
@@ -234,8 +209,6 @@
         $(".name-li").show();
         $('.nav').fadeOut("slow");
         $('#headline').text('Processing...');
-        // $('#list').attr('disabled','disabled');
-        // $('#save').attr('disabled','disabled');
         $('#headline').slideUp("fast");
         $('#namesbox').slideDown("fast");
 
@@ -252,7 +225,6 @@
         else { //Mozilla
           names=names.split("\n");
           names = cleanArray(names);
-          // console.log(names);
         }
 
         $("#values").show();
