@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-
+<!DOCTYPE html><html lang='en' class=''>
   <head>
     <meta charset="UTF-8">
     <meta name="mobile-web-app-capable" content="yes">
@@ -14,28 +11,43 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="js/vendor/stop-execution-on-timeout.js"></script>
+    <script type='text/javascript' charset='utf-8'>
+    // Hides mobile browser's address bar when page is done loading.
+    window.addEventListener('load', function(e) {
+      setTimeout(function() { window.scrollTo(0, 1); }, 1);
+    }, false);
+    //keep links in full screen
+    var a=document.getElementsByTagName("a");
+    for(var i=0;i<a.length;i++) {
+      if(!a[i].onclick && a[i].getAttribute("target") != "_blank") {
+        a[i].onclick=function() {
+          window.location=this.getAttribute("href");
+          return false;
+        }
+      }
+    }
+    </script>
 
     <title>PongMobile Raffle System</title>
 
     <script>
-      document.write('<script src=' +
-      ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
-      '.js><\/script>')
+    document.write('<script src=' +
+    ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+    '.js><\/script>')
     </script>
 
     <script>$(document).foundation();</script>
 
     <script>
-      window.console = window.console || function(t) {};
-      if (document.location.search.match(/type=embed/gi)) {
-        window.parent.postMessage("resize", "*");
-      }
+    window.console = window.console || function(t) {};
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
     </script>
 
   </head>
-
   <body translate="no" onload="reset();">
-
+    <div id="content">
       <div class="full-head nav-container">
         <div class="row">
           <h1 class="title">
@@ -44,7 +56,7 @@
 
           <div class="large-12 columns nav">
             <ul class="button-group even-4">
-              <li><a href="index.html" class="alert button" id="reset" onclick="return confirm('Will delete any new names added. Are you sure?')">Reset</a></li>
+              <li><a href="/" class="alert button" id="reset" onclick="return confirm('Will delete any new names added. Are you sure?')">Reset</a></li>
               <li><button class="button" id="list" onclick="namelist()">Player List</button></li>
               <li><button class="button" id="save" onclick="save();">Update</button></li>
               <li><button class="success button" id="go" onclick="go();">Let's Go!</button></li>
@@ -52,45 +64,42 @@
           </div>
         </div>
       </div>
-    <div class="row">
-      <div class="large-12 columns" >
-        <h2 id="headline">Excited? Let's see who is the Lucky player!</h2>
-        <div class="go" align=center>
-          <div class="round-button">
-            <div class="round-button-circle"><a href="javascript:go();" class="round-button">RUN RAFFLE</a></div>
-          </div>
-        </div>
 
-        <div id="popdown">
-          <div id="names" class="inbox"><textarea name="namesbox" id="namesbox"></textarea></div>
-        </div
-
-          <div id="values"></div>
-
-          <div class="name-li" >
-            <ol id="raffle" class="play"></ol>
+      <div class="row">
+        <div class="large-12 columns" >
+          <div class="raffle-action-controllers">
+            <h2 id="headline"><div style="width:100%; text-align:center">Excited? Let's see who is the Lucky player!</div></h2>
+            <div class="start" align=center>
+              <div class="round-button">
+                <div class="round-button-circle"><a href="javascript:go();" class="round-button">RUN RAFFLE</a></div>
+              </div>
+            </div>
           </div>
 
-          <div class="congrats"></div>
+          <div id="popdown">
+            <div id="names" class="inbox"><textarea name="namesbox" id="namesbox"></textarea></div>
+            </div
 
-          <br clear="all" />
+            <div id="values"></div>
+
+            <div class="name-container">
+              <div id="players" class=""></div>
+            </div>
+            <br clear="all" />
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="sound">
-      <audio id="epicSound">
-        <source src="http://tabletennispro.net/raffle/sounds/ticker-sound.ogg" type="audio/ogg">
-        <source src="http://tabletennispro.net/raffle/sounds/ticker-sound.wav" type="audio/wav">
-      </audio>
+    <footer class="pm-tag" id="footer"></footer>
 
-      <audio id="winnerSound">
-        <source src="http://tabletennispro.net/raffle/sounds/andTheWinnerIs.ogg" type="audio/ogg">
-        <source src="http://tabletennispro.net/raffle/sounds/andTheWinnerIs.wav" type="audio/wav">
-      </audio>
-    </div>
-
-    <script >
+        <script >
+        //let us be able top execute the raffle with spacebar
+        document.body.onkeyup = function(e){
+          if(e.keyCode == 32){
+          go();
+          }
+        }
 
         function cleanArray(actual) {
           var newArray = new Array();
@@ -102,283 +111,257 @@
           return newArray;
         }
 
-      //for a more true random pick, we shuffle the array to randomly place the each value in the array at different location.
-      //prior to selecting at random
-      function shuffle(array) {
-        var currentIndex = array.length, temporaryValue, randomIndex;
+        //for a more true random pick, we shuffle the array to randomly place each value in the array at different location.
+        //prior to selecting at random
+        function shuffle(array) {
+          var currentIndex = array.length, temporaryValue, randomIndex;
 
-        // While there remain elements to shuffle...
-        while (0 !== currentIndex) {
+          // While there remain elements to shuffle...
+          while (0 !== currentIndex) {
 
-          // Pick a remaining element...
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex -= 1;
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
 
-          // And swap it with the current element.
-          temporaryValue = array[currentIndex];
-          array[currentIndex] = array[randomIndex];
-          array[randomIndex] = temporaryValue;
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+          }
+          return array;
         }
-        return array;
-      }
 
-      function playerNames(){
+        function playerNames(){
           var names = new Array("Linda","Charlene","William","Parker", "Kinley","Geovanni","Selena", "Arnd","Callie");
-        return names;
-      }
-
-      var text;
-      var players = shuffle(cleanArray(playerNames()));
-      // console.log(players);
-
-      function reset(){
-        // re-enable go button
-        setTimeout("$('#go').removeAttr('disabled')",11005);
-        //$('#save').attr('disabled','disabled');
-        var namesbreak = "";
-        if(gup('players') != ""){
-          var players = gup('players');
-          namesbreak = players.replace(/101/g,'\n');
-          namesbreak = namesbreak.replace(/%20/g,' ');
+          return names;
         }
 
-        else{
-          var players = playerNames();
-          for(var i in players){
-            name = players[i];
+        var text;
+        var players = shuffle(cleanArray(playerNames()));//remove whitespaces and randomly shuffle the array content
+
+        function reset(){
+          setTimeout("$('#go').removeAttr('disabled')",11005);
+          $('.pm-tag').hide();
+
+          var namesbreak = "";
+
+          var playerN = playerNames();
+          for(var i in playerN){
+            name = playerN[i];
             if (name == "" || typeof(name) == undefined){}else{
               namesbreak = namesbreak + name + "\n";
             }
           }
-        }
-        $("#namesbox").val(shuffle(namesbreak));
-      }
-
-      function cleanNames(para){
-        para = para.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-        var regexS = "[\\?&]"+para+"=([^&#]*)";
-        var regex = new RegExp( regexS );
-        var results = regex.exec( window.location.href );
-        if( results == null )
-        return "";
-        else
-        return results[1];
-      }
-
-      function gup(param){
-        para = param.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-        var regexS = "[\\?&]"+para+"=([^&#]*)";
-        var regex = new RegExp( regexS );
-        var results = regex.exec( window.location.href );
-        if( results == null )
-        return "";
-        else
-        return results[1];
-      }
-
-      function namelist(){
-        $('#namesbox').removeAttr('disabled','disabled');
-        $('#headline').text('Modify player list and click "Update"!');
-        $("#popdown").show();
-        $('.go').fadeOut("fast");
-        $("#values").hide();
-        // $(".name-li").hide();
-        $("#names").show();
-        $('body').css({"overflow-y": "visible"});
-      }
-
-      // does the actual animation
-      function save(){
-        $("#popdown").show();
-        $("#values").hide();
-        $(".name-li").hide();
-        $("div").remove("#result1");
-        savenames = $("#namesbox").val();
-        savenames = savenames.replace(/\n\r?/g, '101');
-        $('#headline').fadeOut();
-        $('#headline').text('Nicely done! The player list is updated.').fadeIn();
-        $("#names").show();
-        $('#namesbox').attr('disabled','disabled');
-      }
-
-      function go(){
-        $('body').css({"overflow-y": "hidden"});
-        $('#go').attr('disabled','disabled');
-        $('.go').fadeOut("fast");
-        $("#epicSound")[0].play();
-        $(".name-li").show();
-        $('.nav').fadeOut("slow");
-        $('#headline').text('Processing...');
-        $('#headline').slideUp("fast");
-        $('#namesbox').slideDown("fast");
-
-        var count = 1;
-        count = 1;
-        $("div").remove("#result1");
-        names = $("#namesbox").val();
-
-        if(document.all) { // IE
-          names=names.split("\n");
-          names = cleanArray(names);
-
-        }
-        else { //Mozilla
-          names=names.split("\n");
-          names = cleanArray(names);
+          $("#namesbox").val(shuffle(namesbreak));
         }
 
-        $("#values").show();
-        $(".name").show();
-        $("#popdown").hide();
-        $("div").remove(".name");
-        $("div").remove(".extra");
-        $("#playback").html("");
-        newtop = names.length * 200 * -1;
-        $('#values').css({top: + newtop});
-
-        for(var i in names){
-          if (names[i] == "" || typeof(names[i]) == undefined){
-            count = count-1;
-          } else {
-            name = names[i];
-            $('#values').append('<div id=result'+count+' class=name>'+name+'</div>');
-          }
-          count = count+1;
-        }
-        for(var i in names){
-          if (names[i] == "" || typeof(names[i]) == undefined){}else{
-            name = names[i];
-            $('#values').append('<div class=name>'+name+'</div>');
-          }
-          count = count+1;
+        function namelist(){
+          $('.pm-tag').hide();//congrats msg
+          $('#namesbox').removeAttr('disabled','disabled');
+          $('#go').attr('disabled','disabled');
+          $('#headline').text('Modify player list and click "Update"!');
+          $("#popdown").show();
+          $('.start').fadeOut("fast");
+          $("#values").hide();
+          $("#names").show();
+          $('body').css({"overflow-y": "visible"});
         }
 
-        text = $('#result1').text()
-        $('#values').animate({top: '+176'},5500);
-
-      // Initializes and runs the raffle.
-        var jForm = $( "form:first" );
-        var jSelect = jForm.find( ":input[ name = 'count' ]" );
-        var jRaffle = $( "#raffle" );
-
-        // Clear the raffle list.
-        jRaffle.empty();
-        var names = shuffle(cleanArray(names)); // from array function above
-
-        for(var i=0;i<names.length;i++){if (window.CP.shouldStopExecution(1)){break;}
-          var item = names[i];
-          jRaffle.append( "<li><div>" + item + "</div></li>" );
-        }
-      window.CP.exitedLoop(1);
-
-      // Find the "on" element.
-      var jCurrentLI = jRaffle.find( "li:first" ).addClass( "on" );
-
-      // Get base pause time.
-      var intPause = 20;
-
-      // Get the time to wait before chaning the pause time.
-      var intDelay = (5500 + (Math.random() * 1000));
-
-      // Define the ticker.
-        var Ticker = function(){
-        var jNextLI = jCurrentLI.next( "li" );
-
-        // Check to see if there is a next LI.
-        if (!jNextLI.length){
-          jNextLI = jRaffle.find( "li:first" );
-        }
-
-        // Turn off the current list.
-        jCurrentLI.removeClass( "on" );
-
-        // Turn on next list.
-        jNextLI.addClass( "on" );
-
-        // Store the new LI in the current LI (for next iteration).
-        jCurrentLI = jNextLI;
-        // Check to see if we should start changing the pause duration.
-        if (intDelay > 0){
-          // Substract from the delay.
-          intDelay -= intPause;
-        } else {
-          // Change the pause.
-          intPause *= (1 + (Math.random() * .2));
-        }
-
-        // Check to see how long the pause it. Once it gets over a certain wait
-        // time, we are done playing and picking the winner, let's disable the losers
-        if (intPause >= 300){ // run ticker for at least 16 seconds and than select a winner
-          if(!$("#epicSound").paused) {
-            var newVolume = $("#epicSound")[0].volume - 0.8;
-            if(newVolume >= 0){
-              $("#epicSound")[0].volume = newVolume;
-              $("#winnerSound")[0].play();
-              // $(".sound").hide("slow");
-            }
-          }
-          $('#raffle').removeClass("play");
-          $('li[class="on"]').addClass("winner");
-          $('.winner').css('width', '+=100px' );// to assure that the winner name is fully shown in the div, we add 100px to winning on the fly
-          $('#olraffle li:not([class]), li[class=""]').addClass("off");// find the losers and give them class
-          $('li[class="off"]').delay(1000).animate({"opacity":.10}, "slow");//remove the losers
-          $('.winner').delay(500).animate({height: "+=50px", width: "+=80", "font-size":"65", "padding-bottom": "20px", "margin-right": "20px"}, 'slow');
-          $('#headline').text('The Lucky Winner is ....');
-          var winner =  $(".winner").find('div').first().text();
-          $('.winner').delay(2000).queue(function(next){$(this).append('<div class="extra"><a class="small alert button"  href="#" onClick="namelist();">Want to remove from list?</a></div><div id="w-name">'+winner+'</div>').fadeIn("slow")});
-          $('.nav').delay(3000).slideDown("slow");//bring back the nav
-          $('#headline').slideDown();
-          // $('.congrats').text('Congratulations!');
-          // $('.congrats').fadeIn('slow');
-        }else {
-          // Not done yet, call again shortly.
-          setTimeout( Ticker, intPause );
-          // make it stand out
-          setTimeout("standout(text)",5500);
-        }
-      }
-      Ticker();
-      }
-
-
-      function standout(text){
-        $('#result1').removeClass('name');
-        $('.name').animate({opacity: .25});
-        $('#result1').animate({height: '+=80px'});
-        $('#result1').append('<div class="extra"><a class="small alert button" href="#" onClick="namelist();">Remove from list</a></div>');
-        // $('.on').append('<div class="extra"><a class="small alert button" href="#" onClick="removevictim();">Remove name from list</a></div>');
-        $('#go').removeAttr('disabled','disabled');
-        // $('#list').removeAttr('disabled','disabled');
-        // $('#save').removeAttr('disabled','disabled');
-        // $('#headline').text('Found the Winner!');
-        // $('#headline').slideDown();
-      }
-      function removevictim(){ //NOT IN USE
-        // Removing victim from array and UI
-        // Rewriting namesbox contents
-        var nameupdated = "";
-        for(var i in players){
-          name = players[i];
-          if (name == "" || name == text || typeof(name) == undefined){
-          }else{
-            var winnerToRemove = $(".winner").find('div').first().text();//$(".w-name").find('div').first().text();
-            nameupdated = (nameupdated + "\n" + name).replace(winnerToRemove, '');
-          }
-        }
-        // console.log(nameupdated);
-        //console.log("Original "+players);
-        $('#namesbox').val("");
-        $('#namesbox').val(nameupdated);
-        save();
-        $('#result1').html("Removed");
-        $('#result1').fadeOut(1000, function(){
+        function save(){
+          $("#popdown").show();
+          $("#values").hide();
+          $(".name-container").hide();
           $("div").remove("#result1");
-        });
-        $("div").remove(".name");
-        $("div").remove(".extra");
-        $('#headline').text('OK, done! Let\'s see who is next? Just run the raffle again.');
+          savenames = $("#namesbox").val();
+          savenames = savenames.replace(/\n\r?/g, '101');
+          $('#headline').fadeOut();
+          $('#headline').text('Nicely done! The player list is updated.').fadeIn();
+          $("#names").show();
+          $('#namesbox').attr('disabled','disabled');
+          $('#go').removeAttr('disabled', 'disable');
+        }
+
+        // taken from here
+        // https://javascript.info/js-animation#structured-animation
+        function animate({timing, draw, duration}) {
+          let go = performance.now();
+
+          requestAnimationFrame(function animate(time) {
+            // timeFraction goes from 0 to 1
+            let timeFraction = (time - go) / duration;
+            if (timeFraction > 1) timeFraction = 1;
+
+            // calculate the current animation state
+            let progress = timing(timeFraction)
+
+            draw(progress); // draw it
+
+            if (timeFraction < 1) {
+              requestAnimationFrame(animate);
+            }else {
+              running = false;
+              winnerSound();
+            }
+          });
+        }
+
+        // create a time function like this
+        // https://www.desmos.com/calculator/bhqqikwf3g
+        // heavier slope in the beginning, flattens out
+        function quad(timeFraction) {
+          return Math.pow(0.12, (timeFraction - 0.12));
+        }
+
+        var curr = 0;
+        var size = 0;
+        var steps = 0;
+        var running = false;
+        var advanceThreshold = 0;
+        var sounds = {
+          tick: new Audio('sounds/tick-sound.mp3'),
+          winner: new Audio('sounds/andTheWinnerIs.mp3')
+        }
+
+        function unHighlightPlayer(p) {
+          $('#players li:nth-child(' + (p + 1) + ')').removeClass('selected');
+        }
+
+        function highlightPlayer(p) {
+          $('#players li:nth-child(' + (p + 1) + ')').addClass('selected');
+        }
+
+        function advanceSelected(x) {
+          var advance = parseInt(x*size);
+          if(steps + advance > advanceThreshold) {
+            unHighlightPlayer(curr % size);
+            curr += 1;
+            steps = 0;
+            var sel = curr % size;
+            highlightPlayer(sel);
+            advanceSound();
+          }else {
+            steps+=advance;
+          }
+        }
+
+        function go() {
+          $('.pm-tag').hide();
+          $('body').css({"overflow-y": "hidden"});
+          $('#go').attr('disabled','disabled');
+          $('.start').fadeOut("fast");
+          $(".name-container").show();
+          $('.nav').fadeOut("slow");
+          $('#headline').text('Processing...');
+          $('#headline').slideUp("fast");
+          $('#namesbox').slideDown("fast");
+
+          var count = 1;
+          count = 1;
+          $("div").remove("#result1");
+          names = $("#namesbox").val();
+
+          if(document.all) { // IE
+            names=names.split("\n");
+            names = cleanArray(names);
+          }else { //Mozilla
+            names = names.split("\n");
+            names = cleanArray(names);
+          }
+
+          $("#values").show();
+          $(".name").show();
+          $("#popdown").hide();
+          $("div").remove(".extra");
+          newtop = names.length * 200 * -1;
+          $('#values').css({top: + newtop});
+
+          for(var i in names){
+
+            if (names[i] == "" || typeof(names[i]) == undefined){
+              count = count-1;
+            }else {
+              name = names[i];
+              $('#values').append('<div id=result'+count+' class=name>'+name+'</div>');
+            }
+
+            count = count+1;
+          }
+
+          for(var i in names){
+
+            if (names[i] == "" || typeof(names[i]) == undefined){}else{
+              name = names[i];
+              $('#values').append('<div class=name>'+name+'</div>');
+            }
+            count = count+1;
+          }
+          text = $('#result1').text()
+          $('#values').animate({top: '+176'},5500);
+
+          // Initializes and runs the raffle.
+          var jForm = $( "form:first" );
+          var jRaffle = $( "#players" );
+
+          jRaffle.empty(); // need this to clear and pre raffle after editing player list
+          var names = shuffle(cleanArray(names)); // from array function above
+          for(var i=0;i<names.length;i++){if (window.CP.shouldStopExecution(1)){break;}
+          var item = names[i];
+          jRaffle.append( "<li class=''><div>" + item + "</div></li>" );
+        }
+
+        window.CP.exitedLoop(1);
+
+        //html5 sounds don't work unless triggered once specifically for mobile
+        sounds.tick.play();
+        sounds.tick.play();
+        sounds.winner.play();
+        sounds.winner.pause();
+
+        if(running == true) return;
+
+        size = $("#players li").length;
+        steps = Math.random()*size;
+        advanceThreshold = size * 2;
+        running = true;
+
+
+        var numList = $("#players li").length;//get number of players on the list
+        // console.log(numList);
+
+        if($("#players li").length >= 20) {
+          var duration = 10000 + Math.random()*10000;
+        }else{
+          var duration = 5000 + Math.random()*5000;
+        }
+
+        animate({duration: duration, timing: quad, draw: advanceSelected});
       }
 
+      function advanceSound() {
+        sounds.tick.currentTime = 0;
+        sounds.tick.play();
+      }
+
+      function winnerSound() {
+        sounds.winner.play();
+        $('#processing').fadeOut();
+        $('#go').removeAttr('disabled', 'disable');
+        $('li[class="selected"]').addClass("winner");
+        $('.selected').css('width', '+=100px');// to assure that the winner name is fully shown in the div, we add 100px to winning on the fly
+        $('#players li:not([class]), li[class=""]').addClass("off");// find the losers and give them class
+        $('li[class="off"]').delay(1000).animate({"opacity":.10}, "slow");//fade out the losers
+        $('.selected').delay(500).animate({height: "+=70px", width: "+=80", "font-size":"65", "padding-bottom": "20px", "margin-right": "20px"}, 'slow');
+        $('#headline').text('The Lucky Winner is ....');
+        $('#headline').slideDown("slow");
+        var winner =  $(".selected").find('div').first().text(); //get the winner name, but not need right now
+        $('.selected').delay(2000).queue(function(next){$(this).append('<div class="extra"><a class="alert button"  href="#" onClick="namelist();">Want to remove from list?</a></div>').show("slow")});
+        $('.winner').css({position: "absolute", display: "inline-block", top: "40%", left: "40%", "z-index" : "9999", "margin-top" : "-50px", "margin-left" : "-50px", width: "auto", "line-height" : "135%", height: "+=30px", width: "+=80" });
+        $('.extra').delay(500).fadeIn("slow");//bring in option to remove name
+        $('.nav').delay(6000).slideDown("slow");//bring back the nav
+        $('#headline').delay(6000).animate({height: "+=50px", width: "+=80"}, 'slow').css({position: "absolute", display: "inline-block", top: "5%", "margin-top" : "-50px", "margin-left" : "50px"});
+        $('.pm-tag').text('Congrats '+winner+'! Thank you for using PongMobile.').append('<br/><img id="theImg" src="img/PM-logo_for_stamping.png" />');
+        $('.pm-tag').delay(3000).fadeIn({"opacity":.10}, "slow");
+      }
     </script>
   </body>
 </html>

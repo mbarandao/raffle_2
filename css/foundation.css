@@ -5,17 +5,37 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+.name-container {
+  margin-left: 10px;
+  padding-top:50px;
+  background:#fff;
+  height: 500px;
+}
+
+.raffle-action-controllers {
+  margin-top: 10%;
+}
+.pm-tag {
+  width: 100%;
+  text-align: center;
+  vertical-align: text-bottom;
+}
+
 #players {
   margin-top: 0px;
+  margin-left: 10px;
+  padding-top:50px;
+  background:#fff;
+  height: 500px;
 }
-#players ul {
+#players {
   list-style-type: none;
   margin-left: 0px;
   padding: 0;
 
 }
 
-#players ul li {
+#players li {
   margin: 0;
   display: inline-block;
   border: 3px solid white;
@@ -23,39 +43,13 @@
   background: #f0f0f0;
 }
 
-#players ul li.selected {
+#players li.selected {
   border: 3px solid black;
 
   background: yellow;
 }
 
-ol#raffle {
-  list-style-type: none ;
-  /*float: left ;*/
-  font-size: 15px ;
-  margin: 0px 0px 0px 0px ;
-  padding: 20px 60px 20px 40px ;
-}
-
-ol#raffle li {
-  background-color: #FAFAFA ;
-  border: 3px solid #fff ;
-  float: left ;
-  height: 60px ;
-  line-height: 60px ;
-  margin: 0px 10px 10px 0px ;
-  overflow: hidden ;
-  padding: 0px 10px 0px 10px ;
-  text-align: center ;
-  width: auto ;
-}
-
-ol#raffle li.on {
-  background-color: gold ;
-
-}
-
-ol#raffle li.winner {
+.winner {
   display: inline-block;
   border: 3px solid black ;
   font-size: 35px ;
@@ -65,6 +59,7 @@ ol#raffle li.winner {
   height:70px;
   padding-right: 20px
   width: auto;
+  text-align:center;
 }
 
 .container {
@@ -84,17 +79,6 @@ ol#raffle li.winner {
 
 form {
   margin-bottom: 50px ;
-}
-
-.name-li {
-  margin-left: 10px;
-  padding-top:50px;
-  background:#fff;
-  height: 500px;
-}
-.congrats {
-  text-align:center;
-  margin-top:50px;"
 }
 
 #values {
@@ -133,8 +117,8 @@ form {
   padding-bottom:50%;
   line-height:1.5em;
   margin-top:-0.5em;
-
   text-align:center;
+  veritcal-algin: top;
   color:#e2eaf3;
   font-family:Verdana;
   font-size:1.2em;
@@ -148,8 +132,8 @@ form {
 }
 
 #headline {
-  text-align:center;
-  margin-top:30px;"
+  text-align:left;
+  width: 100%;
 }
 
 .start-page {
@@ -172,7 +156,8 @@ form {
 
 .extra {
   font-size:12px;
-  margin-left: 40px;
+  position: relative;
+  top: -20px;
 }
 
 #result1 {
@@ -194,7 +179,12 @@ form {
 
 html,
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   background:#fff;
+  -webkit-font-smoothing: antialiased;
+  /*background:#fff;
   color: #222222;
   padding: 0;
   margin: 0;
@@ -203,8 +193,22 @@ body {
   font-style: normal;
   line-height: 1;
   position: relative;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;*/
 }
+
+#footer {
+  position:absolute;
+  margin:0px auto;
+  left:0;
+  right:0;
+  top:80%;
+  /*padding-bottom: -50px;*/
+}
+#content {
+  flex: 1;
+  padding: 0px;
+}
+
 
 a:focus {
   outline: none; }
